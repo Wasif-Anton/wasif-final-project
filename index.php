@@ -58,7 +58,7 @@ require_once './include/header.php'
 
         <!-- Login button -->
         <div class="col-md-3 text-end">
-            <a type="button" href="./login.php" class=" btn btn-outline-primary me-2">Login</a>
+            <a type="button" href="./login.php" class=" btn btn-outline-light me-2">Login</a>
         </div>
     </header>
 

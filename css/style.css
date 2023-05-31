@@ -17,3 +17,46 @@ p{
     color: rgb(186,171,143);
 }
 
+/* Custom CSS for Jack Daniel's style header */
+.header {
+    background-color: #000;
+    padding: 10px 0;
+  }
+  
+  .navbar-brand img {
+    max-width: 120px;
+    height: auto;
+  }
+  
+  .navbar-nav .nav-item {
+    margin-right: 15px;
+  }
+  
+  .nav-link {
+    color: #fff;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #c8aa70;
+  }
+  
+  .navbar-toggler {
+    border: none;
+  }
+  
+  .navbar-toggler .navbar-toggler-icon {
+    background-color: #fff;
+  }
+  
+  .btn-outline-primary {
+    color: #c8aa70;
+    border-color: #c8aa70;
+  }
+  
+  .btn-outline-light:hover {
+    background-color: #c8aa70;
+    color: #000;
+  }
+  
