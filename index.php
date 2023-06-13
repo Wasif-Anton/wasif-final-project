@@ -1,7 +1,7 @@
 <!-- Header -->
 <?php
 $titel = 'Home Page';
-require_once './include/header.php'
+require_once './includes/header.php'
 ?>
 
 <!-- Nav Bar -->

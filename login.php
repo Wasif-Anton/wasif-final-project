@@ -1,7 +1,7 @@
 <!-- Header -->
 <?php
 $titel = 'Home Page';
-require_once './include/header.php'
+require_once './includes/header.php'
 
 ?>
 
@@ -21,7 +21,7 @@ require_once './include/header.php'
 
         <!-- Middle -->
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <!-- Accessories -->
+            <!-- Welcome -->
             <li class="nav-item">
                 <a class="wweet nav-link active" aria-current="page" href="#">Welcome</a>
             </li>
