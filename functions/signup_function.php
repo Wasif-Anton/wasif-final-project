@@ -1,5 +1,5 @@
 <?php
-function isSignupDataValid($name, $email, $phone, $password, $confirm_password)
+function isSignupDataValid($name, $email, $phone, $date, $password, $confirm_password)
 {
     $errors = [];
 
@@ -21,26 +21,40 @@ function isSignupDataValid($name, $email, $phone, $password, $confirm_password)
     }
 
     // -- Email --
-    // Check if email is epmty
+    // Check if email is empty
     if (empty($email)) {
         $errors[] = "Email is required.";
     }
-
     // Check if the email is valid
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    else if (!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = "Invalid email format.";
     }
+
 
     // -- Phone --
     // Check if phone is empty
     if (empty($phone)) {
         $errors[] = "Phone number is required.";
     }
-
     // Check if the phone number is valid (only numbers, 10 digits)
-    $phonePattern = '/^\d{10}$/';
-    if (!preg_match($phonePattern, $phone)) {
+    else if (!preg_match('/^\d{10}$/', $phone)) {
         $errors[] = "Invalid phone number.";
+    }
+
+
+    // -- Date --
+    // Check if date is empty
+    if (empty($date)) {
+        $errors[] = "Date of birth is required.";
+    }
+    //
+    else {
+        // Check if the date is within the valid range
+        $minDate = '1950-01-01';
+        $maxDate = date('Y-m-d'); // Set the maximum date to today
+        if ($date < $minDate || $date > $maxDate) {
+            $errors[] = "Invalid date of birth. Please select a date between $minDate and $maxDate.";
+        }
     }
 
     // -- Password --
