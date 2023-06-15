@@ -13,7 +13,7 @@
 
     <!-- This is a Dynamic Title -->
     <title>
-        <?php echo $titel; ?>
+        <?php echo $title; ?>
     </title>
 </head>
 

@@ -1,6 +1,6 @@
 <!-- Header -->
 <?php
-$titel = 'Home Page';
+$title = 'Home Page';
 require_once './includes/header.php'
 ?>
 
