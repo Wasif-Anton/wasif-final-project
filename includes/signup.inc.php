@@ -26,17 +26,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Data is valid, proceed with signup
         header("Location: ../login.php");
         exit();
-    }
-    //
-    else {
+    } else {
         // Display error messages to the user
         foreach ($errors as $error) {
             echo "<p>Error: $error</p>";
         }
+
+        // Delay redirect to index page for 3 seconds
+        echo '<script>
+            setTimeout(function() {
+                window.location.href = "../index.php";
+            }, 3000);
+        </script>';
     }
-}
-//
-else {
+} else {
     header("Location: ../signup.php");
     exit();
 }
