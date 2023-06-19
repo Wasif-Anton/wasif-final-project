@@ -30,7 +30,6 @@ function isSignupDataValid($name, $email, $phone, $date, $password, $confirm_pas
         $errors[] = "Invalid email format.";
     }
 
-
     // -- Phone --
     // Check if phone is empty
     if (empty($phone)) {
@@ -40,7 +39,6 @@ function isSignupDataValid($name, $email, $phone, $date, $password, $confirm_pas
     else if (!preg_match('/^\d{10}$/', $phone)) {
         $errors[] = "Invalid phone number.";
     }
-
 
     // -- Date --
     // Check if date is empty
@@ -54,6 +52,15 @@ function isSignupDataValid($name, $email, $phone, $date, $password, $confirm_pas
         $maxDate = date('Y-m-d'); // Set the maximum date to today
         if ($date < $minDate || $date > $maxDate) {
             $errors[] = "Invalid date of birth. Please select a date between $minDate and $maxDate.";
+        }
+
+        // Check if the user is 18 years old or older
+        $dob = new DateTime($date);
+        $today = new DateTime();
+        $age = $today->diff($dob)->y;
+
+        if ($age < 18) {
+            $errors[] = "You must be at least 18 years old to sign up.";
         }
     }
 
