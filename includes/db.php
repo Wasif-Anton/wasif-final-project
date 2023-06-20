@@ -1,17 +1,19 @@
 <?php
 
-// Creating a connection to our database
-$server_name  = 'localhost';
-$db_username = "root";
-$db_password = '';
+// Database configuration
+$server_name = 'localhost';
 $db_name = 'alcohol_archive_db';
+$db_username = 'root';
+$db_password = '';
 
-// Create connection
-$conn = new mysqli($server_name, $db_username, $db_password, $db_name);
+// Create a new PDO instance
+try {
+    $conn = new PDO("mysql:host=$server_name;dbname=$db_name", $db_username, $db_password);
 
-// Check connection
-if (!$conn) {
-    print "Could not connect to database ";
-    die("Connection failed: " . mysqli_connect_error());
+    // Set PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    echo "Connection success!";
+} catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
 }
-print "Connection Success!";
