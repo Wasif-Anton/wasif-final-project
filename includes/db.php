@@ -1,5 +1,5 @@
+<!-- This is db.php -->
 <?php
-
 // Database configuration
 $dsn = "mysql:host=$server_name;dbname=$db_name";
 $db_username = 'root';

@@ -1,3 +1,4 @@
+<!-- This is signup_function.php -->
 <?php
 function isSignupDataValid($name, $email, $phone, $date, $password, $confirm_password)
 {

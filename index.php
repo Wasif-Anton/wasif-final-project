@@ -1,3 +1,4 @@
+<!-- This is index.php -->
 <!-- Header -->
 <?php
 $title = 'Home Page';

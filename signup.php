@@ -1,3 +1,4 @@
+<!-- This is signup.php -->
 <!-- Header -->
 <?php
 $title = 'Signup';

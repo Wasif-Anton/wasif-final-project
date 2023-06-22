@@ -1,3 +1,4 @@
+<!-- This is footer.php -->
 <br><br><br><br><br><br>
 
 <footer class="py-3 my-4 mt-auto position-static">

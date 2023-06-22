@@ -1,3 +1,4 @@
+<!-- This is login.php -->
 <!-- Header -->
 <?php
 $title = 'Login';
