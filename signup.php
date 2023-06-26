@@ -69,7 +69,7 @@ require_once './includes/header.php'
                         <!-- Password -->
                         <div class="mb-3">
                             <label for="password" class="form-label"><strong>Password</strong></label>
-                            <input type="password" id="password" name="password" autocomplete="new-password" class="form-control" placeholder="Enter your password">
+                            <input type="password" id="password" name="pwd" autocomplete="new-password" class="form-control" placeholder="Enter your password">
                             <span id="passwordHelpInline" class="form-text">Must not contain spaces or emojis.</span>
                         </div>
                         <!-- Confirm Password -->

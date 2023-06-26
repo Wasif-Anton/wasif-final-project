@@ -1,6 +1,6 @@
 <!-- This is signup_function.php -->
 <?php
-function isSignupDataValid($name, $email, $phone, $date, $password, $confirm_password)
+function isSignupDataValid($name, $email, $phone, $date, $pwd, $confirm_password)
 {
     $errors = [];
 
@@ -11,7 +11,6 @@ function isSignupDataValid($name, $email, $phone, $date, $password, $confirm_pas
     if (empty($name)) {
         $errors[] = "Name is required.";
     }
-
     // Check if the name is valid (no numbers or special characters)
     $namePattern = '/[\d\x{1F300}-\x{1F6FF}\'"@#~!$%\^&\*\(\)-\+=\{\}\[\]\|;:<>,\?\/\\`]/u';
     if (preg_match($namePattern, $name)) {
@@ -67,7 +66,7 @@ function isSignupDataValid($name, $email, $phone, $date, $password, $confirm_pas
 
     // -- Password --
     // Check if password is empty
-    if (empty($password)) {
+    if (empty($pwd)) {
         $errors[] = "Password is required.";
     }
 
@@ -78,12 +77,12 @@ function isSignupDataValid($name, $email, $phone, $date, $password, $confirm_pas
 
     // Check if the password contains spaces or emojis
     $passwordPattern = '/[\s\x{1F300}-\x{1F6FF}]/u';
-    if (preg_match($passwordPattern, $password)) {
+    if (preg_match($passwordPattern, $pwd)) {
         $errors[] = "Invalid password.";
     }
 
     // Check if the password and confirm password match
-    if ($password !== $confirm_password) {
+    if ($pwd !== $confirm_password) {
         $errors[] = "Passwords do not match.";
     }
 

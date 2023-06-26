@@ -7,11 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars($_POST["email"]);
     $phone = htmlspecialchars($_POST["phone"]);
     $date = htmlspecialchars($_POST["date"]);
-    $password = htmlspecialchars($_POST["password"]);
+    $pwd = htmlspecialchars($_POST["pwd"]);
     $confirm_password = htmlspecialchars($_POST["confirm_password"]);
 
     // Validate the signup data (signup_function.php)
-    $errors = isSignupDataValid($name, $email, $phone, $date, $password, $confirm_password);
+    $errors = isSignupDataValid($name, $email, $phone, $date, $pwd, $confirm_password);
 
     if (empty($errors)) {
         // Check if the user is 18 years old or older
