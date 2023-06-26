@@ -1,4 +1,3 @@
-<!-- This is signup.unc.php -->
 <?php
 require_once '../functions/signup_function.php';
 
@@ -9,6 +8,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $date = htmlspecialchars($_POST["date"]);
     $pwd = htmlspecialchars($_POST["pwd"]);
     $confirm_password = htmlspecialchars($_POST["confirm_password"]);
+
+    try {
+        require_once "../includes/db.php";
+
+        $query = "INSERT INTO users (name, email, phone, date, pwd) VALUES (?, ?, ?, ?, ?);";
+
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([$name, $email, $phone, $date, $pwd]);
+
+        $pdo = null;
+        $stmt = null;
+
+        // Redirect to the login page
+        header("Location: ../login.php");
+        die();
+    } catch (PDOException $e) {
+        die("Query failed: " . $e->getMessage());
+    }
 
     // Validate the signup data (signup_function.php)
     $errors = isSignupDataValid($name, $email, $phone, $date, $pwd, $confirm_password);
@@ -24,6 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ../index.php");
             exit();
         }
+
         // Data is valid, proceed with signup
         header("Location: ../login.php");
         exit();
@@ -41,6 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </script>';
     }
 } else {
+    // Redirect to the signup page
     header("Location: ../signup.php");
     exit();
 }
