@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
 
-        // Data is valid, proceed with signup
+        // Data is valid, proceed with signup 
         try {
             require_once "../includes/db.php";
 
