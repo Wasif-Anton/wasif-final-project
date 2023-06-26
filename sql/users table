@@ -3,11 +3,11 @@ CREATE TABLE users (
   name VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL UNIQUE,
   phone VARCHAR(20) NOT NULL UNIQUE,
-  date_of_birth DATE NOT NULL,
+  date DATE NOT NULL,
   pwd VARCHAR(255) NOT NULL,
   created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 
-INSERT INTO users (name, email, phone, date_of_birth, pwd, created_at)
+INSERT INTO users (name, email, phone, date, pwd, created_at)
 VALUES ('wasif', 'wasif@gmail.com', '0544683385', '1994-09-09', '123', NOW());
