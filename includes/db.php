@@ -1,7 +1,7 @@
 <!-- This is db.php -->
 <?php
 // Database configuration
-$dsn = "mysql:host=$server_name;dbname=$db_name";
+$dsn = "mysql:host=localhost;dbname=alcohol_archive_db";
 $db_username = 'root';
 $db_password = '';
 
