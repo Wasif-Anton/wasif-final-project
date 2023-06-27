@@ -16,7 +16,7 @@ require_once './includes/header.php'
                 <svg class="bi me-2" width="40" height="32">
                     <use xlink:href="#bootstrap"></use>
                 </svg>
-                <span class="wwhite fs-4">Alcohol</span><span class="wweet fs-4">Archive</span>
+                <span class="fs-4">Alcohol</span><span class="fs-4">Archive</span>
             </a>
         </div>
 
@@ -24,7 +24,7 @@ require_once './includes/header.php'
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <!-- Welcome -->
             <li class="nav-item">
-                <a class="wweet nav-link active" aria-current="page" href="#">Welcome</a>
+                <a class="nav-link active" aria-current="page" href="#">Welcome</a>
             </li>
         </ul>
         <!-- Login button -->
@@ -54,7 +54,7 @@ require_once './includes/header.php'
                             <input type="password" id="password" class="form-control" placeholder="Enter your password">
                         </div>
                         <button type="submit" class="btn btn-primary">Login</button>
-                        <a type="button" href="./signup.php" class="btn ">Signup</a>
+                        <a type="button" href="./signup.php" class="btn btn-primary ">Signup</a>
                     </form>
                 </div>
             </div>

@@ -14,14 +14,14 @@ require_once './includes/header.php'
                 <svg class="bi me-2" width="40" height="32">
                     <use xlink:href="#bootstrap"></use>
                 </svg>
-                <span class="wwhite fs-4">Alcohol</span><span class="wweet fs-4">Archive</span>
+                <span class="fs-4">Alcohol</span><span class="fs-4">Archive</span>
             </a>
         </div>
         <!-- Middle -->
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <!-- Welcome -->
             <li class="nav-item">
-                <a class="wweet nav-link active" aria-current="page" href="#"></a>
+                <a class="nav-link active" aria-current="page" href="#"></a>
             </li>
         </ul>
         <!-- Login button -->

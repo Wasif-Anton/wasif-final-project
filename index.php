@@ -15,7 +15,7 @@ require_once './includes/header.php'
                 <svg class="bi me-2" width="40" height="32">
                     <use xlink:href="#bootstrap"></use>
                 </svg>
-                <span class="wwhite fs-4">Alcohol</span><span class="wweet fs-4">Archive</span>
+                <span class="fs-4">Alcohol</span><span class="fs-4">Archive</span>
             </a>
         </div>
 
@@ -23,43 +23,43 @@ require_once './includes/header.php'
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <!-- Alcohol -->
             <li class="nav-item dropdown">
-                <a class="wweet nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Alcohol
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="wweet dropdown-item" href="#">Gin</a></li>
-                    <li><a class="wweet dropdown-item" href="#">Vodka</a></li>
-                    <li><a class="wweet dropdown-item" href="#">Whiskey</a></li>
-                    <li><a class="wweet dropdown-item" href="#">Tequila</a></li>
-                    <li><a class="wweet dropdown-item" href="#">Rum</a></li>
-                    <li><a class="wweet dropdown-item" href="#">Brandy</a></li>
+                    <li><a class="dropdown-item" href="#">Gin</a></li>
+                    <li><a class="dropdown-item" href="#">Vodka</a></li>
+                    <li><a class="dropdown-item" href="#">Whiskey</a></li>
+                    <li><a class="dropdown-item" href="#">Tequila</a></li>
+                    <li><a class="dropdown-item" href="#">Rum</a></li>
+                    <li><a class="dropdown-item" href="#">Brandy</a></li>
                 </ul>
             </li>
             <!-- Wine -->
             <li class="nav-item dropdown">
-                <a class="wweet nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Wine
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="wweet dropdown-item" href="#">Red Wine</a></li>
-                    <li><a class="wweet dropdown-item" href="#">White Wine</a></li>
-                    <li><a class="wweet dropdown-item" href="#">Rosé Wine</a></li>
-                    <li><a class="wweet dropdown-item" href="#">Sparkling Wine (Champagne)</a></li>
+                    <li><a class="dropdown-item" href="#">Red Wine</a></li>
+                    <li><a class="dropdown-item" href="#">White Wine</a></li>
+                    <li><a class="dropdown-item" href="#">Rosé Wine</a></li>
+                    <li><a class="dropdown-item" href="#">Sparkling Wine (Champagne)</a></li>
                 </ul>
             </li>
             <!-- Beer -->
             <li class="nav-item">
-                <a class="wweet nav-link active" aria-current="page" href="#">Beer</a>
+                <a class="nav-link active" aria-current="page" href="#">Beer</a>
             </li>
             <!-- Accessories -->
             <li class="nav-item">
-                <a class="wweet nav-link active" aria-current="page" href="#">Accessories</a>
+                <a class="nav-link active" aria-current="page" href="#">Accessories</a>
             </li>
         </ul>
 
         <!-- Login button -->
         <div class="col-md-3 text-end">
-            <a type="button" href="./login.php" class=" btn btn-outline-light me-2">Login</a>
+            <a type="button" href="./login.php" class=" btn btn-primary">Login</a>
         </div>
     </header>
 

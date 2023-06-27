@@ -5,7 +5,7 @@
     <ul class="nav justify-content-center border-bottom pb-3 mb-3"></ul>
     <p class="text-center">©
         <?php echo '' . date("Y"); ?>
-        <span class="wwhite">Alcohol</span><span class="wweet">Archive</span>, Inc
+        <span class="">Alcohol</span><span class="">Archive</span>, Inc
     </p>
 
 </footer>
