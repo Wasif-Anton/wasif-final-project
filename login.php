@@ -44,7 +44,7 @@ require_once './includes/header.php'
                 </div>
                 <div class="card-body">
                     <!-- Form -->
-                    <form>
+                    <form actiom=''>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" id="email" class="form-control" placeholder="Enter your email">
@@ -55,6 +55,7 @@ require_once './includes/header.php'
                         </div>
                         <button type="submit" class="btn btn-primary">Login</button>
                         <a type="button" href="./signup.php" class="btn btn-primary ">Signup</a>
+                        <button type="button" class="btn btn-danger">Log in with Google</button>
                     </form>
                 </div>
             </div>
@@ -65,3 +66,12 @@ require_once './includes/header.php'
     <?php
     require_once './includes/footer.php'
     ?>
+
+    <!-- Log in with Google -->
+    <!-- 
+    // Set the client ID and client secret
+    $client->setClientId('785062031643-27are9o7k0i9mtooqct3at7f2kc8emk8.apps.googleusercontent.com');
+    $client->setClientSecret('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');
+    // Set the redirect URI
+    $client->setRedirectUri('http://localhost/wasif-final-project/login.php');
+    -->
