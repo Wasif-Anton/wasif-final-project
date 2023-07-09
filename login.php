@@ -55,7 +55,7 @@ require_once './includes/header.php'
                         </div>
                         <button type="submit" class="btn btn-primary">Login</button>
                         <a type="button" href="./signup.php" class="btn btn-primary ">Signup</a>
-                        <button type="button" class="btn btn-danger">Log in with Google</button>
+   <!--                     <button type="button" class="btn btn-danger">Log in with Google</button>    -->
                     </form>
                 </div>
             </div>
