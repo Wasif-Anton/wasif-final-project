@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Data is valid, proceed with signup 
         try {
-            require_once "../includes/db.php";
+            require_once "../includes/dbh.inc.php";
 
             $query = "INSERT INTO users (name, email, phone, date, pwd) VALUES (?, ?, ?, ?, ?);";
 

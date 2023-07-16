@@ -1,4 +1,4 @@
-<!-- This is db.php -->
+<!-- This is dbh.inc.php -->
 <?php
 // Database configuration
 $dsn = "mysql:host=localhost;dbname=alcohol_archive_db";
