@@ -2,7 +2,9 @@
 <!-- Header -->
 <?php
 $title = 'Signup';
-require_once './includes/header.php'
+require_once 'includes/header.php';
+require_once './includes/config_session.inc.php';
+require_once './includes/signup_view.inc.php';
 ?>
 
 <!-- Nav Bar -->
@@ -81,6 +83,12 @@ require_once './includes/header.php'
                         <button type="submit" class="btn btn-primary">Create your account</button>
                         <p class="text-gray-soft small mb-2">Already have an account? <a href="./login.php">Login</a></p>
                     </form>
+
+                    <?php
+                    // Error messages
+                    checkSignupErrors();
+                    ?>
+
                 </div>
             </div>
         </div>
