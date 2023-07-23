@@ -1,63 +1,60 @@
 <!-- This is signup.inc.php -->
 <?php
-require_once '../functions/signup_function.php';
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = htmlspecialchars($_POST["name"]);
-    $email = htmlspecialchars($_POST["email"]);
-    $phone = htmlspecialchars($_POST["phone"]);
-    $date = htmlspecialchars($_POST["date"]);
-    $pwd = htmlspecialchars($_POST["pwd"]);
-    $confirm_password = htmlspecialchars($_POST["confirm_password"]);
+    $name = ($_POST["name"]);
+    $email = ($_POST["email"]);
+    $phone = ($_POST["phone"]);
+    $date = ($_POST["date"]);
+    $pwd = ($_POST["pwd"]);
+    $confirm_password = ($_POST["confirm_password"]);
 
-    // Validate the signup data (signup_function.php)
-    $errors = isSignupDataValid($name, $email, $phone, $date, $pwd, $confirm_password);
+    try {
+        require_once "dbh.inc.php";
+        require_once "signup_model.inc.php"; // Store data + retriveing
+        require_once "signup_controller.inc.php"; // Take inputs from user
 
-    if (empty($errors)) {
-        // Check if the user is 18 years old or older
-        $dob = new DateTime($date);
-        $today = new DateTime();
-        $age = $today->diff($dob)->y;
+        // -- ERROR HANDLER --
+        $errors = [];
 
-        if ($age < 18) {
-            // User is underage, redirect to index page
-            header("Location: ../index.php");
-            exit();
+        if (isInputEmpty($name, $email, $phone, $date, $pwd, $confirm_password)) {
+            $errors["email_used"] = "Fill in all fields!";
         }
-
-        // Data is valid, proceed with signup 
-        try {
-            require_once "../includes/dbh.inc.php";
-
-            $query = "INSERT INTO users (name, email, phone, date, pwd) VALUES (?, ?, ?, ?, ?);";
-
-            $stmt = $pdo->prepare($query);
-            $stmt->execute([$name, $email, $phone, $date, $pwd]);
-
-            $pdo = null;
-            $stmt = null;
-
-            // Redirect to the login page
-            header("Location: ../login.php");
-            exit();
-        } catch (PDOException $e) {
-            die("Query failed: " . $e->getMessage());
+        if (isNameInvalid($name)) {
+            $errors["invalid_name"] = "Invalid name!";
         }
-    } else {
-        // Display error messages to the user
-        foreach ($errors as $error) {
-            echo "<p>Error: $error</p>";
+        if (isEmailInvalid($email)) {
+            $errors["invalid_email"] = "Invalid email!";
         }
+        if (isEmailRegistered($pdo, $email)) {
+            $errors["email_used"] = "Email already registered!";
+        }
+        if (isPhoneInvalid($phone)) {
+            $errors["invalid_phone"] = "Invalid phone!";
+        }
+        if (isPhoneRegistered($pdo, $phone)) {
+            $errors["phone_used"] = "Phone already registered!";
+        }
+        if (isUnderage($date)) {
+            $errors["user_underage"] = "You must be at least 18 years old to sign up!";
+        }
+        if (isPasswordValid($pwd)) {
+            $errors["invalid_password"] = "Password must not contain spaces or emojis!";
+        }
+        if (doPasswordsMatch($pwd, $confirm_password)) {
+            $errors["password_mismatch"] = "Passwords do not match!";
+        }
+        require_once "config_session.inc.php";
 
-        // Delay redirect to index page for 3 seconds
-        echo '<script>
-            setTimeout(function() {
-                window.location.href = "../signup.php";
-            }, 4000);
-        </script>';
+        if ($errors) {
+            $_SESSION["error_signup"] = $errors;
+            header("Location: ../signup.php");
+            die();
+        }
+    } catch (PDOException $e) {
+        die("Query failed: " . $e->getMessage());
     }
 } else {
     // Redirect to the signup page
     header("Location: ../signup.php");
-    exit();
+    die();
 }
