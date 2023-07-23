@@ -1,6 +1,5 @@
 <!-- This is signup.incss.php -->
-
-<!-- OLD -->
+<!-- NOT in USE OLD -->
 
 <?php
 require_once '../functions/signup_function.php';
