@@ -1,6 +1,6 @@
-<!-- This is signup.php -->
-<!-- Header -->
 <?php
+// This is signup.php
+
 $title = 'Signup';
 require_once 'includes/header.php';
 require_once './includes/config_session.inc.php';
@@ -45,18 +45,16 @@ require_once './includes/signup_view.inc.php';
                     <!-- Form -->
                     <form id="signup-form" action="./includes/signup.inc.php" method="POST">
 
-                        <!-- From signup_view.inc.php -->
                         <?php
+                        // From signup_view.inc.php
                         // function that generates and outputs the HTML code for the signup form.
                         renderSignupForm()
                         ?>
 
-                        <button type="submit" class="btn btn-primary">Create your account</button>
-                        <p class="text-gray-soft small mb-2">Already have an account? <a href="./login.php">Login</a></p>
                     </form>
 
-                    <!-- From signup_view.inc.php -->
                     <?php
+                    // From signup_view.inc.php
                     // Error messages
                     checkSignupErrors();
                     ?>

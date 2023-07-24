@@ -1,5 +1,6 @@
-<!-- This is signup.inc.php -->
 <?php
+// This is signup.inc.php
+
 // Checks if the current request method is "POST"
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = ($_POST["name"]);

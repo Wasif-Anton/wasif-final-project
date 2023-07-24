@@ -3,6 +3,7 @@
 
 declare(strict_types=1);
 
+// Function to render the signup form
 function renderSignupForm()
 {
     echo '    
@@ -42,9 +43,13 @@ function renderSignupForm()
         <input type="password" id="confirm_password" name="confirm_password" autocomplete="new-password" class="form-control" placeholder="Confirm your password">
         <div id="confirm-password-error" class="error-message"></div>
     </div>
+
+    <button type="submit" class="btn btn-primary">Create your account</button>
+    <p class="text-gray-soft small mb-2">Already have an account? <a href="./login.php">Login</a></p>
     ';
 }
 
+// Function to display signup errors
 function checkSignupErrors()
 {
     if (isset($_SESSION['error_signup'])) {

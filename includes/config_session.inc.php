@@ -1,5 +1,5 @@
-<!-- This is config_session.inc.php -->
 <?php
+// This is config_session.inc.php
 
 ini_set('session.use_only_cookies', 1);
 ini_set('session.use_strict_mide', 1);

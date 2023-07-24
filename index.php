@@ -1,6 +1,6 @@
-<!-- This is index.php -->
-<!-- Header -->
 <?php
+// This is index.php
+
 $title = 'Home Page';
 require_once './includes/header.php'
 ?>
