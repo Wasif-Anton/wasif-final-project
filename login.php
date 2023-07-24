@@ -1,9 +1,10 @@
-<!-- This is login.php -->
-<!-- Header -->
 <?php
-$title = 'Login';
-require_once './includes/header.php'
+// This is login.php
 
+$title = 'Login';
+require_once 'includes/header.php';
+require_once './includes/config_session.inc.php';
+require_once './includes/login_view.inc.php';
 ?>
 
 <!-- Nav Bar -->
@@ -44,19 +45,22 @@ require_once './includes/header.php'
                 </div>
                 <div class="card-body">
                     <!-- Form -->
-                    <form actiom=''>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" class="form-control" placeholder="Enter your email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" id="password" class="form-control" placeholder="Enter your password">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
-                        <a type="button" href="./signup.php" class="btn btn-primary ">Signup</a>
-   <!--                     <button type="button" class="btn btn-danger">Log in with Google</button>    -->
+                    <form actiom='./includes/login.inc.php'>
+
+                        <?php
+                        // From login_view.inc.php
+                        // function that generates and outputs the HTML code for the login form.
+                        renderLoginForm();
+                        ?>
+
                     </form>
+
+                    <?php
+                    // From From login_view.inc.php
+                    // Error messages
+                    checkLoginErrors();
+                    ?>
+
                 </div>
             </div>
         </div>
@@ -66,4 +70,3 @@ require_once './includes/header.php'
     <?php
     require_once './includes/footer.php'
     ?>
-
