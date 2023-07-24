@@ -16,7 +16,6 @@ function getEmail(object $pdo, $email)
     return $result;
 }
 
-
 // Will check if the phone number is already registered in the database.
 // If the phone number is already registered, the function will return the phone number. Otherwise, the function will return null.
 function getPhone($pdo, $phone)
@@ -28,4 +27,23 @@ function getPhone($pdo, $phone)
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result;
+}
+
+function setUser(object $pdo, $name, $email, $phone, $date, $pwd)
+{
+    $query = "INSERT INTO users (name, email, phone, date, pwd) VALUES (:name, :email, :phone, :date, :pwd);";
+    $stmt = $pdo->prepare($query);
+
+    // Hashing Passowrd
+    $option = [
+        'cost' => 12
+    ];
+    $hashedPwd = password_hash($pwd, PASSWORD_BCRYPT, $option);
+
+    $stmt->bindParam(":name", $name);
+    $stmt->bindParam(":email", $email);
+    $stmt->bindParam(":phone", $phone);
+    $stmt->bindParam(":date", $date);
+    $stmt->bindParam(":pwd", $hashedPwd);
+    $stmt->execute();
 }

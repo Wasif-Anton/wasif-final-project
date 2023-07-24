@@ -1,5 +1,6 @@
 <!-- This is signup.inc.php -->
 <?php
+// Checks if the current request method is "POST"
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = ($_POST["name"]);
     $email = ($_POST["email"]);
@@ -50,6 +51,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ../signup.php");
             die();
         }
+
+        // Creating an account
+        createUser($pdo, $name, $email, $phone, $date, $pwd);
+        header("Location: ../login.php?signup=success");
+
+        $pdo = null;
+        $stmt = null;
+
+        die();
     } catch (PDOException $e) {
         die("Query failed: " . $e->getMessage());
     }

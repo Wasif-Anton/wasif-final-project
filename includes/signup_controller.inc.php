@@ -121,3 +121,8 @@ function doPasswordsMatch($password, $confirm_password)
 {
     return $password !== $confirm_password;
 }
+
+function createUser(object $pdo, $name, $email, $phone, $date, $pwd)
+{
+    setUser($pdo, $name, $email, $phone, $date, $pwd);
+}
