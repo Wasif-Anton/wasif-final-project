@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $confirm_password = ($_POST["confirm_password"]);
 
     try {
-        require_once "dbh.inc.php";
+        require_once "dbh.inc.php"; // Include the database connection file
         require_once "signup_model.inc.php"; // Store data + retriveing
         require_once "signup_controller.inc.php"; // Take inputs from user
 
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors = [];
 
         if (isInputEmpty($name, $email, $phone, $date, $pwd, $confirm_password)) {
-            $errors["email_used"] = "Fill in all fields!";
+            $errors["empty_input"] = "Fill in all fields!";
         }
         if (isNameInvalid($name)) {
             $errors["invalid_name"] = "Invalid name!";
@@ -45,21 +45,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (doPasswordsMatch($pwd, $confirm_password)) {
             $errors["password_mismatch"] = "Passwords do not match!";
         }
+
         require_once "config_session.inc.php";
 
+        // If it return any of the error it will return the user to the signup page with the error message
         if ($errors) {
             $_SESSION["error_signup"] = $errors;
             header("Location: ../signup.php");
             die();
         }
 
-        // Creating an account
+        // Call the createUser function from signup_controller.inc.php to process the signup
         createUser($pdo, $name, $email, $phone, $date, $pwd);
         header("Location: ../login.php?signup=success");
 
         $pdo = null;
         $stmt = null;
-
         die();
     } catch (PDOException $e) {
         die("Query failed: " . $e->getMessage());
