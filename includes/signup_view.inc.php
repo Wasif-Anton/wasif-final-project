@@ -58,11 +58,10 @@ function checkSignupErrors()
         echo "<br>";
 
         foreach ($errors as $error) {
-            echo '<p class="form-error">' . $error . '</p>';
+            echo '<p class="alert alert-warning" role="alert">' . $error . '</p>';
         }
         unset($_SESSION['error_signup']);
-    }
-    else if (isset($_GET["signup"]) && $_GET["signup"] === "success") {
+    } else if (isset($_GET["signup"]) && $_GET["signup"] === "success") {
         echo '<br>';
         echo '<p Signup success! </p>';
     }

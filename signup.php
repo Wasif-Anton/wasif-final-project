@@ -33,6 +33,15 @@ require_once './includes/signup_view.inc.php';
     </header>
 </div>
 
+<div class="container col-md-6">
+
+    <?php
+    // Error messages
+    // From signup_view.inc.php
+    checkSignupErrors();
+    ?>
+</div>
+
 <!-- Signup Form -->
 <div class="container">
     <div class="row justify-content-center">
@@ -47,18 +56,11 @@ require_once './includes/signup_view.inc.php';
 
                         <?php
                         // From signup_view.inc.php
-                        // function that generates and outputs the HTML code for the signup form.
+                        // Function that generates and outputs the HTML code for the signup form.
                         renderSignupForm()
                         ?>
 
                     </form>
-
-                    <?php
-                    // From signup_view.inc.php
-                    // Error messages
-                    checkSignupErrors();
-                    ?>
-
                 </div>
             </div>
         </div>
