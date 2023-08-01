@@ -29,6 +29,7 @@ function getPhone($pdo, $phone)
     return $result;
 }
 
+// Creates a query to insert the user's data into the users table in the database
 function setUser(object $pdo, $name, $email, $phone, $date, $pwd)
 {
     $query = "INSERT INTO users (name, email, phone, date, pwd) VALUES (:name, :email, :phone, :date, :pwd);";
