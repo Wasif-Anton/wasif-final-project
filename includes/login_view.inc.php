@@ -22,7 +22,21 @@ function renderLoginForm()
     ';
 }
 
-// Function to display login errors
+// Function to display login errors and success message
 function checkLoginErrors()
 {
+    if (isset($_SESSION['error_login'])) {
+        $errors = $_SESSION['error_login'];
+
+        echo '<br>';
+
+        foreach ($errors as $error) {
+            echo '<p class="alert alert-warning" role="alert">' . $error . '</p>';
+        }
+
+        unset($_SESSION['error_login']);
+    } elseif (isset($_GET["login"]) && $_GET["login"] === "success") {
+        echo '<br>';
+        echo '<p>Login successful!</p>';
+    }
 }
