@@ -1,6 +1,8 @@
 <?php
 // This is login_view.inc.php
 
+declare(strict_types=1);
+
 // Function to render the login form
 function renderLoginForm()
 {
@@ -16,22 +18,11 @@ function renderLoginForm()
         <input type="password" id="password" name="pwd" class="form-control" placeholder="Enter your password">
     </div>
     <button type="submit" class="btn btn-primary">Login</button>
-    <a type="button" href="./signup.php" class="btn btn-primary ">Signup</a>
+    <a type="button" href="./signup.php" class="btn btn-primary">Signup</a>
     ';
 }
 
 // Function to display login errors
 function checkLoginErrors()
 {
-    if (isset($_SESSION['error_login'])) {
-        $errors = $_SESSION['error_login'];
-
-        echo "<br>";
-
-        foreach ($errors as $error) {
-            echo '<p class="form-error">' . $error . '</p>';
-        }
-
-        unset($_SESSION['error_login']);
-    }
 }

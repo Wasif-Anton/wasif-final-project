@@ -45,11 +45,11 @@ require_once './includes/login_view.inc.php';
                 </div>
                 <div class="card-body">
                     <!-- Form -->
-                    <form actiom='./includes/login.inc.php'>
+                    <form action="./includes/login.inc.php" method="POST">
 
                         <?php
                         // From login_view.inc.php
-                        // function that generates and outputs the HTML code for the login form.
+                        // Function that generates and outputs the HTML code for the login form.
                         renderLoginForm();
                         ?>
 
@@ -70,3 +70,4 @@ require_once './includes/login_view.inc.php';
     <?php
     require_once './includes/footer.php'
     ?>
+    
