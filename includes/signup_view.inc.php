@@ -49,7 +49,7 @@ function renderSignupForm()
     ';
 }
 
-// Function to display signup errors
+// Function to display signup errors and success message
 function checkSignupErrors()
 {
     if (isset($_SESSION['error_signup'])) {
@@ -63,6 +63,6 @@ function checkSignupErrors()
         unset($_SESSION['error_signup']);
     } else if (isset($_GET["signup"]) && $_GET["signup"] === "success") {
         echo '<br>';
-        echo '<p Signup success! </p>';
+        echo '<p> Signup success! </p>';
     }
 }
