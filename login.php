@@ -35,6 +35,14 @@ require_once './includes/login_view.inc.php';
     </header>
 </div>
 
+<div class="container col-md-6">
+    <?php
+    // From From login_view.inc.php
+    // Error messages
+    checkLoginErrors();
+    ?>
+</div>
+
 <!-- Login Form -->
 <div class="container">
     <div class="row justify-content-center">
@@ -46,21 +54,12 @@ require_once './includes/login_view.inc.php';
                 <div class="card-body">
                     <!-- Form -->
                     <form action="./includes/login.inc.php" method="POST">
-
                         <?php
                         // From login_view.inc.php
                         // Function that generates and outputs the HTML code for the login form.
                         renderLoginForm();
                         ?>
-
                     </form>
-
-                    <?php
-                    // From From login_view.inc.php
-                    // Error messages
-                    checkLoginErrors();
-                    ?>
-
                 </div>
             </div>
         </div>
@@ -70,4 +69,3 @@ require_once './includes/login_view.inc.php';
     <?php
     require_once './includes/footer.php'
     ?>
-    

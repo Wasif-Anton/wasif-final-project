@@ -34,7 +34,6 @@ require_once './includes/signup_view.inc.php';
 </div>
 
 <div class="container col-md-6">
-
     <?php
     // Error messages
     // From signup_view.inc.php
@@ -53,13 +52,11 @@ require_once './includes/signup_view.inc.php';
                 <div class="card-body">
                     <!-- Form -->
                     <form id="signup-form" action="./includes/signup.inc.php" method="POST">
-
                         <?php
                         // From signup_view.inc.php
                         // Function that generates and outputs the HTML code for the signup form.
                         renderSignupForm()
                         ?>
-
                     </form>
                 </div>
             </div>
