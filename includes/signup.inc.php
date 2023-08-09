@@ -11,9 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $confirm_password = ($_POST["confirm_password"]);
 
     try {
-        require_once "dbh.inc.php"; // Include the database connection file
-        require_once "signup_model.inc.php"; // Store data + retriveing
-        require_once "signup_controller.inc.php"; // Take inputs from user
+        require_once "dbh.inc.php";
+        require_once "signup_model.inc.php";
+        require_once "signup_controller.inc.php";
 
         // -- ERROR HANDLER --
         $errors = [];

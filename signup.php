@@ -55,7 +55,7 @@ require_once './includes/signup_view.inc.php';
                         <?php
                         // From signup_view.inc.php
                         // Function that generates and outputs the HTML code for the signup form.
-                        renderSignupForm()
+                        renderSignupForm();
                         ?>
                     </form>
                 </div>
