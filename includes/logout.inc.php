@@ -1,4 +1,5 @@
 <?php
+// This is logout.inc.php
 
 session_start();
 session_unset();

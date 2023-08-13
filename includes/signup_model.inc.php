@@ -7,7 +7,10 @@ declare(strict_types=1);
 // If the email address is already registered, the function will return the email address. Otherwise, the function will return null.
 function getEmail(object $pdo, string $email)
 {
-    $query = "SELECT email FROM users WHERE email = :email;";
+    $query = "SELECT email 
+              FROM users 
+              WHERE email = :email;";
+
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":email", $email);
     $stmt->execute();
@@ -20,7 +23,10 @@ function getEmail(object $pdo, string $email)
 // If the phone number is already registered, the function will return the phone number. Otherwise, the function will return null.
 function getPhone(object $pdo, string $phone)
 {
-    $query = "SELECT phone FROM users WHERE phone = :phone;";
+    $query = "SELECT phone 
+              FROM users 
+              WHERE phone = :phone;";
+
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":phone", $phone);
     $stmt->execute();
@@ -32,7 +38,9 @@ function getPhone(object $pdo, string $phone)
 // Creates a query to insert the user's data into the users table in the database
 function setUser(object $pdo, $name, $email, $phone, $date, $pwd)
 {
-    $query = "INSERT INTO users (name, email, phone, date, pwd) VALUES (:name, :email, :phone, :date, :pwd);";
+    $query = "INSERT INTO users (name, email, phone, date, pwd) 
+              VALUES (:name, :email, :phone, :date, :pwd);";
+
     $stmt = $pdo->prepare($query);
 
     // Hashing Passowrd

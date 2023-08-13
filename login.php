@@ -69,3 +69,4 @@ require_once './includes/login_view.inc.php';
     <?php
     require_once './includes/footer.php'
     ?>
+    
