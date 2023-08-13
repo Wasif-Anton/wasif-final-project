@@ -19,6 +19,8 @@ function renderLoginForm()
     </div>
     <button type="submit" class="btn btn-primary">Login</button>
     <a type="button" href="./signup.php" class="btn btn-primary">Signup</a>
+    <a type="button" href="./forgot_password.php" class="btn btn-primary">Forget Passowrd</a>
+
     ';
 }
 
@@ -35,8 +37,8 @@ function checkLoginErrors()
         }
 
         unset($_SESSION['error_login']);
-    } elseif (isset($_GET["login"]) && $_GET["login"] === "success") {
+    } else if (isset($_GET["login"]) && $_GET["login"] === "success") {
         echo '<br>';
-        echo '<p>Login successful!</p>';
+        echo '<p class="alert alert-primary" role="alert"> Login Success! </p>';
     }
 }
