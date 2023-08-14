@@ -67,6 +67,10 @@ require_once './includes/header.php'
 
 <!-- Welcome -->
 
+<form action="./includes/logout.inc.php" method="POST">
+    <button> Logout </button>
+</form>
+
 <!-- Footer -->
 <?php
 require_once './includes/footer.php'
