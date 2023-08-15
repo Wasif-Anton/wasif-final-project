@@ -39,6 +39,6 @@ function checkLoginErrors()
         unset($_SESSION['error_login']);
     } else if (isset($_GET["login"]) && $_GET["login"] === "success") {
         echo '<br>';
-        echo '<p class="alert alert-primary" role="alert"> Login Success! </p>';
+        echo '<p class="alert alert-success" role="alert"> Login Success! </p>';
     }
 }

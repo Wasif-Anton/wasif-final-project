@@ -1,6 +1,7 @@
 <?php
 // This is password_forgot.inc.php
 
+require_once '../includes/header.php';
 require '../vendor/autoload.php';
 
 // Ensure that the email is properly validated and sanitized before using it
@@ -41,8 +42,8 @@ if ($stmt->rowCount()) {
     try {
         $mail->send();
     } catch (Exception $e) {
-        echo "Message could not be sent. Mailer error: {$mail->ErrorInfo}";
+        echo '<p class="alert alert-warning" role="alert"> Message could not be sent. Mailer error: {$mail->ErrorInfo} </p>';
     }
 }
 
-echo "Message sent, please check your inbox.";
+echo '<p class="alert alert-success" role="alert"> Message sent, please check your inbox.</p>';

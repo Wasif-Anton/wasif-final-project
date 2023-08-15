@@ -2,7 +2,7 @@
 // This is index.php
 
 $title = 'Home Page';
-require_once './includes/header.php'
+require_once './includes/header.php';
 ?>
 
 <!-- Nav Bar -->
@@ -15,7 +15,7 @@ require_once './includes/header.php'
                 <svg class="bi me-2" width="40" height="32">
                     <use xlink:href="#bootstrap"></use>
                 </svg>
-                <span class="fs-4">Alcohol</span><span class="fs-4">Archive</span>
+                <span class="fs-4">Alcohol Archive</span>
             </a>
         </div>
 
@@ -59,19 +59,19 @@ require_once './includes/header.php'
 
         <!-- Login button -->
         <div class="col-md-3 text-end">
-            <a type="button" href="./login.php" class=" btn btn-primary">Login</a>
+            <a type="button" href="./login.php" class="btn btn-primary">Login</a>
         </div>
     </header>
 
 </div>
-
 <!-- Welcome -->
 
+<!-- Logout Form -->
 <form action="./includes/logout.inc.php" method="POST">
-    <button> Logout </button>
+    <button class="btn btn-danger">Logout</button>
 </form>
 
 <!-- Footer -->
 <?php
-require_once './includes/footer.php'
+require_once './includes/footer.php';
 ?>
