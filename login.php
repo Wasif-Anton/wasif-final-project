@@ -2,7 +2,7 @@
 // This is login.php
 
 $title = 'Login';
-require_once 'includes/header.php';
+require_once './includes/header.php';
 require_once './includes/config_session.inc.php';
 require_once './includes/login_view.inc.php';
 ?>

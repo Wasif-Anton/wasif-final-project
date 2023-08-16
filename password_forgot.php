@@ -1,9 +1,9 @@
 <?php
 // This is password_forgot.php
 
-require 'vendor/autoload.php';
 $title = "Forgot Password";
-require_once 'includes/header.php';
+require_once './includes/header.php';
+require './vendor/autoload.php';
 ?>
 
 <!-- Nav Bar -->
