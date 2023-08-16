@@ -3,6 +3,25 @@
 
 declare(strict_types=1);
 
+function isEmailInputEmpty($email)
+{
+    if (empty($email)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function isPasswordInputEmpty($pwd)
+{
+    if (empty($pwd)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+/*
 function isInputEmpty($email, $pwd)
 {
     // Check if the email and password are empty
@@ -13,6 +32,17 @@ function isInputEmpty($email, $pwd)
     }
 }
 
+function isAllInputEmpty($email, $pwd)
+{
+    if (empty($email) && empty($pwd)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+*/
+
 function isEmailWrong(bool|array $result)
 {
     if (!$result) {
@@ -22,7 +52,7 @@ function isEmailWrong(bool|array $result)
     }
 }
 
-// If password worng it will return true
+// If password wrong it will return true
 function isPasswordWrong(string $pwd, string $hashPwd)
 {
     if (!password_verify($pwd, $hashPwd)) {
@@ -31,4 +61,3 @@ function isPasswordWrong(string $pwd, string $hashPwd)
         return false;
     }
 }
- 

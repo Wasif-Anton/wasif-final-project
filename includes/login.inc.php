@@ -14,18 +14,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // -- ERROR HANDLER --
         $errors = [];
 
-        if (isInputEmpty($email, $pwd)) {
-            $errors["empty_input"] = "Fill in all fields!";
+        // If both fields empty
+        if (isEmailInputEmpty($email) && isPasswordInputEmpty($pwd)) {
+            $errors["all_empty_input"] = "Fill in all fields!";
         }
-
-        $result = getUserEmail($pdo, $email);
-
-        if (isEmailWrong($result)) {
-            $errors["login_incorrect"] = "Incorrect Email!";
+        // If email field empty
+        else if (isEmailInputEmpty($email)) {
+            $errors["email_empty_input"] = "Fill in Email field!";
         }
+        // If password field empty
+        else if (isPasswordInputEmpty($pwd)) {
+            $errors["password_empty_input"] = "Fill in Password field!";
+        } 
+        //If all the fileds are full
+        else {
 
-        if (!isEmailWrong($result) && isPasswordWrong($pwd, $result["pwd"])) {
-            $errors["login_incorrect"] = "Incorrect Password!";
+            $result = getUserEmail($pdo, $email);
+
+            if (isEmailWrong($result)) {
+                $errors["login_incorrect"] = "Incorrect Email or Password!";
+            }
+
+            if (!isEmailWrong($result) && isPasswordWrong($pwd, $result["pwd"])) {
+                $errors["login_incorrect"] = "Incorrect Email or Password!";
+            }
         }
 
         require_once "config_session.inc.php";
