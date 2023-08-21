@@ -13,7 +13,7 @@ try {
     // Set PDO error mode to exception
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    echo '<p class="alert alert-success" role="alert"> Connection success!</p>';
+    // echo '<p class="alert alert-success" role="alert"> Connection success!</p>';
 }
 //
 catch (PDOException $e) {
