@@ -42,7 +42,7 @@ if ($stmt->rowCount()) {
         echo '<script>
                     setTimeout(function() 
                     {
-                        window.location.href = "../login.php";
+                        window.location.href = "../index.php";
                     }, 5000);
               </script>';
     }
@@ -52,6 +52,6 @@ echo '<p class="alert alert-success" role="alert"> Message sent, please check yo
 echo '<script>
             setTimeout(function() 
             {
-                window.location.href = "../login.php";
+                window.location.href = "../index.php";
             }, 5000);
      </script>';

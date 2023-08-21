@@ -19,7 +19,12 @@ function renderLoginForm()
     </div>
     <button type="submit" class="btn btn-primary">Login</button>
     <a type="button" href="./signup.php" class="btn btn-primary">Signup</a>
-    <a type="button" href="./password_forgot.php" class="btn btn-primary">Forget Passowrd</a>
+    <!-- Reset password -->
+    <p class="text-gray-soft small mb-2">
+        Forgot your password? 
+        <a href="./password_forgot.php">Reset Password</a>
+    </p>
+
 
     ';
 }
