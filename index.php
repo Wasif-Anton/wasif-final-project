@@ -66,6 +66,7 @@ require_once './includes/header.php';
 </div>
 <!-- Welcome -->
 
+
 <!-- Logout Form -->
 <form action="./includes/logout.inc.php" method="POST">
     <button class="btn btn-danger">Logout</button>
