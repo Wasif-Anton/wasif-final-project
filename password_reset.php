@@ -29,7 +29,6 @@ if (strtotime($user["reset_token_expires_at"]) <= time()) {
 ?>
 
 <h1>Reset Password</h1>
-
 <form action="./includes/password_reset.inc.php" method="POST">
 
     <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>">
@@ -42,8 +41,6 @@ if (strtotime($user["reset_token_expires_at"]) <= time()) {
 
     <button>Send</button>
 </form>
-
-
 
 <!-- Footer -->
 <?php

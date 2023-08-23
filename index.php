@@ -15,7 +15,7 @@ require_once './includes/header.php';
                 <svg class="bi me-2" width="40" height="32">
                     <use xlink:href="#bootstrap"></use>
                 </svg>
-                <span class="fs-4">Alcohol Archive</span>
+                <span class="fs-4">AlcoholArchive</span>
             </a>
         </div>
 
