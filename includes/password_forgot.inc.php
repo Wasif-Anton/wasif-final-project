@@ -23,13 +23,14 @@ $stmt->bindParam(":expiry", $expiry);
 $stmt->bindParam(":email", $email);
 $stmt->execute();
 
+// Mail information
 if ($stmt->rowCount()) {
 
     $mail = require_once "../includes/mailer.php";
 
     $mail->setFrom("noreply@example.com");
     $mail->addAddress($email);
-    $mail->Subject = "Password Reset";
+    $mail->Subject = "AlcoholArchive - Password Reset";
     $mail->Body = <<<END
     Click <a href="http://localhost/wasif-final-project/password_reset.php?token=$token">here</a> 
     to reset your password.
